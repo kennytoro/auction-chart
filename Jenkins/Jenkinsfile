@@ -11,7 +11,7 @@ pipeline {
 
         stage('Lint Helm Chart To Confirm') {
             steps {
-                sh 'helm lint ./auction-chart/auctionapp'
+                sh 'helm lint ./auction-chart/auctionapp --values auction-chart/auctionapp/values.yaml'
             }
         }
 
