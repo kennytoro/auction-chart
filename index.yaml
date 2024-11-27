@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  auctionapp:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-11-27T14:50:05.27727171+01:00"
+    description: A Helm chart for Kubernetes
+    digest: bacfdd1f340fb66340d461b1170acd8b4927334d7dd39563b83f25e40bbda2d2
+    name: auctionapp
+    type: application
+    urls:
+    - https://kennytoro.github.io/auction-chart/auctionapp-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-11-27T14:50:05.270657367+01:00"
