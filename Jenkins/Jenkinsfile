@@ -5,12 +5,13 @@ pipeline {
         stage('Initialize Helm') {
             steps {
                 sh 'helm version'
+                sh 'ls'
             }
         }
 
         stage('Lint Helm Chart To Confirm') {
             steps {
-                sh 'helm lint auction-chart/auctionapp'
+                sh 'helm lint ./auction-chart/auctionapp'
             }
         }
 
