@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: auctionapp
-  name: auctionapp
+    app: { { .Values.appName } }
+  name: { { .Values.appName } }
 spec:
-  replicas: 2
+  replicas: { { .Values.replicaCount } }
   selector:
     matchLabels:
-      app: auctionapp
+      app: { { .Values.appName } }
   template:
     metadata:
       labels:
-        app: auctionapp
+        app: { { .Values.appName } }
     spec:
       containers:
-        - image: kennytoro/auction:1
-          name: auctionapp
+        - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          name: { { .Values.appName } }
           ports:
-            - containerPort: 50
+            - containerPort: { { .Values.service.port } }
