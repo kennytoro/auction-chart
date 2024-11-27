@@ -11,7 +11,7 @@ pipeline {
 
         stage('Lint Helm Chart To Confirm') {
             steps {
-                sh 'helm lint ./auction-chart/auctionapp --values auction-chart/auctionapp/values.yaml'
+                sh 'helm lint ./auctionapp --values ./auctionapp/values.yaml'
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
                 sh '''
                 helm upgrade --install \
                 toro-auctionapp auction-chart/auctionapp \
-                --values auction-chart/auctionapp/values.yaml
+                --values ./auctionapp/values.yaml
                 '''
             }
         }
