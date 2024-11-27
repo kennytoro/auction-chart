@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh '''
                 helm upgrade --install \
-                toro-auctionapp auction-chart/auctionapp 
+                toro-auctionapp ./auctionapp 
                 '''
             }
         }
