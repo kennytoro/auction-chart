@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: auctionapp
+  name: auctionapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: auctionapp
+  template:
+    metadata:
+      labels:
+        app: auctionapp
+    spec:
+      containers:
+        - image: kennytoro/auction:1
+          name: auctionapp
+          ports:
+            - containerPort: 50

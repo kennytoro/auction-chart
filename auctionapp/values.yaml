@@ -1,0 +1,14 @@
+appName: auctionapp
+
+replicaCount: 2
+
+image:
+  repository: kennytoro/auction
+  tag: 1
+
+service:
+  name: auctionapp-svc
+  type: NodePort
+  port: 50
+  targetPort: 50
+  nodePort: 31007
